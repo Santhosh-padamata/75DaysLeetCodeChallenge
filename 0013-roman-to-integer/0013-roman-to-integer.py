@@ -5,12 +5,9 @@ class Solution(object):
 
         total = 0
 
-        for i in range(len(s)-1):
-            if values[s[i]] < values[s[i+1]]:
-                total -= values[s[i]]
+        for i in range(len(s)):
+            if i+1 < len(s) and values[s[i]] < values[s[i+1]]:
+                total -=values[s[i]]
             else:
-                total += values[s[i]]
-
-        total += values[s[-1]]
-
+                total +=values[s[i]]
         return total
